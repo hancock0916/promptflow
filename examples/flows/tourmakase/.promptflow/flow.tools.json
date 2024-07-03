@@ -1,0 +1,135 @@
+{
+  "package": {},
+  "code": {
+    "hello.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Please replace the template with your own prompt.",
+      "source": "hello.jinja2"
+    },
+    "hello.py": {
+      "type": "python",
+      "inputs": {
+        "travelStyle": {
+          "type": [
+            "string"
+          ]
+        },
+        "arrival": {
+          "type": [
+            "string"
+          ]
+        },
+        "departureDate": {
+          "type": [
+            "string"
+          ]
+        },
+        "returnDate": {
+          "type": [
+            "string"
+          ]
+        },
+        "adult": {
+          "type": [
+            "int"
+          ]
+        },
+        "totalAmount": {
+          "type": [
+            "int"
+          ]
+        }
+      },
+      "source": "hello.py",
+      "function": "my_python_tool"
+    },
+    "llm_node_5ubc.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        },
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_5ubc.jinja2"
+    },
+    "llm_node_54ci.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_54ci.jinja2"
+    },
+    "llm_node_j01c.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "chat_history": {
+          "type": [
+            "string"
+          ]
+        },
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_j01c.jinja2"
+    },
+    "hello_prompt_variant_1.jinja2": {
+      "type": "prompt",
+      "inputs": {
+        "text": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Please replace the template with your own prompt.",
+      "source": "hello_prompt_variant_1.jinja2"
+    },
+    "llm_node_880k.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "total_person": {
+          "type": [
+            "string"
+          ]
+        },
+        "omakaseData": {
+          "type": [
+            "string"
+          ]
+        },
+        "totalAmount": {
+          "type": [
+            "string"
+          ]
+        },
+        "travelStyle": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_880k.jinja2"
+    }
+  }
+}

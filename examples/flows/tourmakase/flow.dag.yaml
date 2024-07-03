@@ -1,0 +1,61 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  travelStyle:
+    type: string
+    default: relex
+    description: (activity, relex, balance)
+  arrival:
+    type: string
+    default: BKK
+    description: TYO
+  departureDate:
+    type: string
+    default: 2024-10-05
+    description: 2024-10-05
+  returnDate:
+    type: string
+    default: 2024-10-10
+    description: 2024-10-10
+  adult:
+    type: int
+    default: 3
+    description: "2"
+  totalAmount:
+    type: int
+    default: 200
+    description: "200"
+outputs:
+  output_prompt:
+    type: string
+    reference: ${llm_node_880k.output}
+nodes:
+- name: echo_my_prompt
+  type: python
+  source:
+    type: code
+    path: hello.py
+  inputs:
+    travelStyle: ${inputs.travelStyle}
+    arrival: ${inputs.arrival}
+    departureDate: ${inputs.departureDate}
+    returnDate: ${inputs.returnDate}
+    adult: ${inputs.adult}
+    totalAmount: ${inputs.totalAmount}
+  aggregation: false
+- name: llm_node_880k
+  type: llm
+  source:
+    type: code
+    path: llm_node_880k.jinja2
+  inputs:
+    deployment_name: gpt-4o
+    temperature: 0
+    max_tokens: 3000
+    omakaseData: ${echo_my_prompt.output.omakaseData}
+    total_person: ${echo_my_prompt.output.total_person}
+    totalAmount: ${echo_my_prompt.output.totalAmount}
+    travelStyle: ${echo_my_prompt.output.travelStyle}
+  connection: AOAI_API
+  api: chat
